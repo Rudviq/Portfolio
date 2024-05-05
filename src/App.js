@@ -101,6 +101,7 @@ function App() {
       <h2>Contact Me</h2>
       <div className="about-content-box">
         <p>Add your about content here.</p>
+        <p>This is Rudviq Bhavsar</p>
       </div>
     </section>
 

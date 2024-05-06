@@ -563,8 +563,10 @@ img, svg {
 
   .left {
     margin-right: 0;
-    height:113px;
+    height:90px;
     align-items: start;
+    padding-left:0;
+    padding-right: 0;
   }
   .middle{
     display: none;
@@ -572,7 +574,7 @@ img, svg {
   }
   
   .trial{
-    padding:40px;
+    padding:35px;
   }
   .trial button{
     height:50px;
@@ -587,7 +589,7 @@ img, svg {
 
   .image-container img{
     margin-right: 0px;
-    height: 400px;
+    height: 350px;
   }
 
   .name{

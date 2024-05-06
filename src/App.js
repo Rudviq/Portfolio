@@ -9,6 +9,17 @@ function App() {
     loop:{}
   });
 
+  const skillsData = [
+    { pic:'react.svg',name: 'React JS', proficiency: 'Experienced' },
+    { pic:'python.svg',name: 'Python', proficiency: 'Experienced' },
+    { pic:'php.svg',name: 'PHP', proficiency: 'Experienced' },
+    { pic:'aws.svg',name: 'AWS', proficiency: 'Experienced' },
+    { pic:'js.svg',name: 'JavaScript', proficiency: 'Experienced' },
+    { pic:'java.png',name: 'Java', proficiency: 'Experienced' },
+    { pic:'docker.png',name: 'Docker', proficiency: 'Experienced' },
+    { pic:'SQL.png',name: 'SQL', proficiency: 'Experienced' },
+  ];
+
 
   return (
     <>
@@ -48,8 +59,8 @@ function App() {
             <img src='./IMG_0365.png' alt="Profile" className="profile-image"/>
           </div>
           <div className="name">
-            <h5 style={{fontSize:'61px'}}>RUDVIQ BHAVSAR</h5>
-            <h5> 
+            <h5 className="devName">RUDVIQ BHAVSAR</h5>
+            <h5 className='jobpos'> 
               <span> SOFTWARE {text}</span>
               <span className="custom-cursor"></span>
               <Cursor style={{ display: 'inline-block', verticalAlign: 'middle', marginLeft: '5px', width: '8px', height: '40px', backgroundColor: 'green' }}/>
@@ -70,10 +81,8 @@ function App() {
     </div>
     <section id="about">
       <h2>About Me</h2>
-      {/* <p>Add your about content here.</p>
-       */}
       <div className="about-content-box">
-        <p>Add your about content here.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
       </div>
     </section>
     <div className="or-spacer">
@@ -81,9 +90,108 @@ function App() {
     </div>
     <section id="skills">
       <h2>My Skills</h2>
-      <div className="about-content-box">
+      <div className="about-content-box1">
+          <div className="details-container">
+            <div className="article-container">
+              {/* Map over skills data to generate HTML */}
+              {skillsData.map((skill, index) => (
+                <article key={index}>
+                  <div>
+                    <img src={skill.pic} alt="Pic" />
+                    <h3>{skill.name}</h3>
+                    <p>{skill.proficiency}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </div>
+      {/* <div className="about-content-box">
         <p>Add your about content here.</p>
-      </div>
+      </div> */}
+      {/* <div class="details-container">
+          
+          <div class="article-container">
+            <article>
+              <img src="github.svg" alt="Experience icon" class="icon"/>
+              <div>
+                <h3>SQL</h3>
+                <p>Experienced</p>
+              </div>
+            </article>
+            <article>
+              <img src="github.svg" alt="Experience icon" class="icon"/>
+              <div>
+                <h3>Python</h3>
+                <p>Experienced</p>
+              </div>
+            </article>
+
+            <article>
+              <img src="github.svg" alt="Experience icon" class="icon"/>
+              <div>
+                <h3>Microsoft Excel</h3>
+                <p>Experienced</p>
+              </div>
+            </article>
+            <article>
+              <img src="github.svg" alt="Experience icon" class="icon"/>
+              <div>
+                <h3>Power BI</h3>
+                <p>Experienced</p>
+              </div>
+            </article>
+            <article>
+              <img src="github.svg" alt="Experience icon" class="icon"/>
+              <div>
+                <h3>Tableau</h3>
+                <p>Experienced</p>
+              </div>
+            </article>
+            <article>
+              <img src="github.svg" alt="Experience icon" class="icon"/>
+              <div>
+                <h3>JIRA</h3>
+                <p>Experienced</p>
+              </div>
+            </article>
+            <article>
+              <img src="github.svg" alt="Experience icon" class="icon"/>
+              <div>
+                <h3>AWS</h3>
+                <p>Intermediate</p>
+              </div>
+            </article>
+         
+            
+            <article>
+              <img src="github.svg" alt="Experience icon" class="icon"/>
+              <div>
+                <h3>SAS</h3>
+                <p>Intermediate</p>
+              </div>
+            </article>
+            <article>
+              <img src="github.svg" alt="Experience icon" class="icon"/>
+              <div>
+                <h3>SAP S/4 HANA</h3>
+                <p>Intermediate</p>
+              </div>
+            </article>
+            
+            
+            <article>
+              <img src="github.svg" alt="Experience icon" class="icon"/>
+              <div>
+                <h3>ML Algorithms</h3>
+                <p>Intermediate</p>
+              </div>
+            </article>
+            
+            
+            
+          </div>
+      </div> */}
     </section>
     <div className="or-spacer">
       <div className="mask"></div>

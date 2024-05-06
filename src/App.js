@@ -21,7 +21,6 @@ function App() {
     { pic:'SQL.png',name: 'SQL', proficiency: 'Experienced' },
   ];
 
-  const [currentSlide, setCurrentSlide] = useState(0);
   const [isMobileView, setIsMobileView] = useState(false);
   const projectCarouselRef = useRef(null);
   let startX = 0;

@@ -563,13 +563,15 @@ img, svg {
 
   .left {
     margin-right: 0;
-    height:90px;
+    height:80px;
     /* align-items: start; */
     padding-left:0;
     padding-right: 0;
   }
 
-  
+  .logo img{
+    height: 150px;
+  }
   
   .middle{
     display: none;

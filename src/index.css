@@ -564,17 +564,21 @@ img, svg {
   .left {
     margin-right: 0;
     height:90px;
-    align-items: start;
+    /* align-items: start; */
     padding-left:0;
     padding-right: 0;
   }
+
+  
+  
   .middle{
     display: none;
     height:0;
   }
   
   .trial{
-    padding:35px;
+    padding:20px;
+    padding-top:0px;
   }
   .trial button{
     height:50px;

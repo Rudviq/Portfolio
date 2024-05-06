@@ -1,6 +1,7 @@
 import React from 'react';
 import {useTypewriter, Cursor} from 'react-simple-typewriter';
 import './App.css';
+import { useState, useRef, useEffect } from 'react';
 
 function App() {
 
@@ -19,6 +20,87 @@ function App() {
     { pic:'docker.png',name: 'Docker', proficiency: 'Experienced' },
     { pic:'SQL.png',name: 'SQL', proficiency: 'Experienced' },
   ];
+
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isMobileView, setIsMobileView] = useState(false);
+  const projectCarouselRef = useRef(null);
+  let startX = 0;
+  let scrollLeft = 0;
+
+  const handleTouchStart = (e) => {
+    startX = e.touches[0].clientX;
+    scrollLeft = projectCarouselRef.current.scrollLeft;
+  };
+
+  const handleTouchMove = (e) => {
+    if (!startX) return;
+    const x = e.touches[0].clientX;
+    const walk = (x - startX) * 3; // Adjust scroll speed if needed
+    projectCarouselRef.current.scrollLeft = scrollLeft - walk;
+  };
+
+  const handleTouchEnd = () => {
+    startX = 0;
+  };
+
+  const projects = [
+    {
+      title: "Project 1",
+      description: "Description of Project 1",
+      image: "profile.jpg",
+      link: "#"
+    },
+    {
+      title: "Project 2",
+      description: "Description of Project 2",
+      image: "profile.jpg",
+      link: "#"
+    },
+    {
+      title: "Project 3",
+      description: "Description of Project 3",
+      image: "profile.jpg",
+      link: "#"
+    },
+    {
+      title: "Project 1",
+      description: "Description of Project 1",
+      image: "profile.jpg",
+      link: "#"
+    },
+    {
+      title: "Project 2",
+      description: "Description of Project 2",
+      image: "profile.jpg",
+      link: "#"
+    },
+    {
+      title: "Project 3",
+      description: "Description of Project 3",
+      image: "profile.jpg",
+      link: "#"
+    }
+  ];
+
+  useEffect(() => {
+    // Function to check if the screen width is less than a certain threshold
+    const checkMobileView = () => {
+      const screenWidth = window.innerWidth;
+      setIsMobileView(screenWidth < 768); // Adjust threshold as needed
+    };
+
+    // Initial check on mount
+    checkMobileView();
+
+    // Event listener to check for screen width changes
+    window.addEventListener('resize', checkMobileView);
+
+    // Cleanup function to remove event listener on unmount
+    return () => {
+      window.removeEventListener('resize', checkMobileView);
+    };
+  }, []);
+
 
 
   return (
@@ -55,7 +137,6 @@ function App() {
           <div className='demo-container'>
           </div>
           <div className="image-container">
-          {/* <div className="light-source"></div> */}
             <img src='./IMG_0365.png' alt="Profile" className="profile-image"/>
           </div>
           <div className="name">
@@ -77,7 +158,6 @@ function App() {
     </section>
     <div className="or-spacer">
       <div className="mask"></div>
-      {/* <span><i>or</i></span> */}
     </div>
     <section id="about">
       <h2>About Me</h2>
@@ -93,7 +173,6 @@ function App() {
       <div className="about-content-box1">
           <div className="details-container">
             <div className="article-container">
-              {/* Map over skills data to generate HTML */}
               {skillsData.map((skill, index) => (
                 <article key={index}>
                   <div>
@@ -106,101 +185,104 @@ function App() {
             </div>
           </div>
         </div>
-      {/* <div className="about-content-box">
-        <p>Add your about content here.</p>
-      </div> */}
-      {/* <div class="details-container">
-          
-          <div class="article-container">
-            <article>
-              <img src="github.svg" alt="Experience icon" class="icon"/>
-              <div>
-                <h3>SQL</h3>
-                <p>Experienced</p>
-              </div>
-            </article>
-            <article>
-              <img src="github.svg" alt="Experience icon" class="icon"/>
-              <div>
-                <h3>Python</h3>
-                <p>Experienced</p>
-              </div>
-            </article>
-
-            <article>
-              <img src="github.svg" alt="Experience icon" class="icon"/>
-              <div>
-                <h3>Microsoft Excel</h3>
-                <p>Experienced</p>
-              </div>
-            </article>
-            <article>
-              <img src="github.svg" alt="Experience icon" class="icon"/>
-              <div>
-                <h3>Power BI</h3>
-                <p>Experienced</p>
-              </div>
-            </article>
-            <article>
-              <img src="github.svg" alt="Experience icon" class="icon"/>
-              <div>
-                <h3>Tableau</h3>
-                <p>Experienced</p>
-              </div>
-            </article>
-            <article>
-              <img src="github.svg" alt="Experience icon" class="icon"/>
-              <div>
-                <h3>JIRA</h3>
-                <p>Experienced</p>
-              </div>
-            </article>
-            <article>
-              <img src="github.svg" alt="Experience icon" class="icon"/>
-              <div>
-                <h3>AWS</h3>
-                <p>Intermediate</p>
-              </div>
-            </article>
-         
-            
-            <article>
-              <img src="github.svg" alt="Experience icon" class="icon"/>
-              <div>
-                <h3>SAS</h3>
-                <p>Intermediate</p>
-              </div>
-            </article>
-            <article>
-              <img src="github.svg" alt="Experience icon" class="icon"/>
-              <div>
-                <h3>SAP S/4 HANA</h3>
-                <p>Intermediate</p>
-              </div>
-            </article>
-            
-            
-            <article>
-              <img src="github.svg" alt="Experience icon" class="icon"/>
-              <div>
-                <h3>ML Algorithms</h3>
-                <p>Intermediate</p>
-              </div>
-            </article>
-            
-            
-            
-          </div>
-      </div> */}
+      
     </section>
     <div className="or-spacer">
       <div className="mask"></div>
     </div>
     <section id="projects">
       <h2>My Projects</h2>
-      <div className="about-content-box">
+      {/* <div className="about-content-box">
         <p>Add your about content here.</p>
+      </div> */}
+      {/* <div className="project-container">
+        <div className="project-box">
+          <img src="profile.jpg" alt="Project 1" />
+          <h3>Project 1</h3>
+          <p>Description of Project 1</p>
+          <a href="profile.jpg">View Project</a>
+        </div>
+        <div className="project-box">
+          <img src="profile.jpg" alt="Project 2" />
+          <h3>Project 2</h3>
+          <p>Description of Project 2</p>
+          <a href="profile.jpg">View Project</a>
+        </div>
+        <div className="project-box">
+          <img src="profile.jpg" alt="Project 2" />
+          <h3>Project 2</h3>
+          <p>Description of Project 2</p>
+          <a href="profile.jpg">View Project</a>
+        </div>
+        <div className="project-box">
+          <img src="profile.jpg" alt="Project 2" />
+          <h3>Project 2</h3>
+          <p>Description of Project 2</p>
+          <a href="profile.jpg">View Project</a>
+        </div>
+        <div className="project-box">
+          <img src="profile.jpg" alt="Project 2" />
+          <h3>Project 2</h3>
+          <p>Description of Project 2</p>
+          <a href="profile.jpg">View Project</a>
+        </div>
+        <div className="project-box">
+          <img src="profile.jpg" alt="Project 2" />
+          <h3>Project 2</h3>
+          <p>Description of Project 2</p>
+          <a href="profile.jpg">View Project</a>
+        </div>
       </div>
+      <div
+        className="project-carousel"
+        ref={projectCarouselRef}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
+      >
+      
+        {projects.map((project, index) => (
+          <div key={index} className="project-box">
+            <img src={project.image} alt={project.title} />
+            <h3>{project.title}</h3>
+            <p>{project.description}</p>
+            <a href={project.link}>View Project</a>
+          </div>
+        ))}
+      </div> */}
+      {isMobileView ? (
+        <div
+          className="project-carousel"
+          ref={projectCarouselRef}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+        >
+          {/* Render project boxes */}
+          {projects.map((project, index) => (
+            <div key={index} className="project-box">
+              {/* Display project details */}
+              <img src={project.image} alt={project.title} />
+              <h3>{project.title}</h3>
+              <p>{project.description}</p>
+              <a href={project.link}>View Project</a>
+            </div>
+          ))}
+        </div>
+      ) : (
+        <div className="project-container">
+          {/* Render project boxes */}
+          {projects.map((project, index) => (
+            <div key={index} className="project-box">
+              {/* Display project details */}
+              <img src={project.image} alt={project.title} />
+              <h3>{project.title}</h3>
+              <p>{project.description}</p>
+              <a href={project.link}>View Project</a>
+            </div>
+          ))}
+        </div>
+      )}
     </section>
     <div className="or-spacer">
       <div className="mask"></div>

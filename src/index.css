@@ -324,18 +324,82 @@ header {
   padding-bottom: 35px;
 }
 
-#projects{
+/* #projects{ */
   /* background:
   linear-gradient(360deg, rgba(29,33,37,1), rgba(0, 0, 0, 0.86)); */
 	/* url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='7.72' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E"); */
   /* height:100vh; */
-  height: calc(100vh - 100px);
+  /* height: calc(100vh - 100px);
+  margin-top: -20px;
+  text-align: center;
+  padding-top: 50px;
+  color: white;
+  font-size: x-large;
+} */
+
+#projects {
   margin-top: -20px;
   text-align: center;
   padding-top: 50px;
   color: white;
   font-size: x-large;
 }
+
+.project-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding-left: 60px;
+  padding-right: 60px;
+  max-width: 1200px;
+  margin: 20px auto;
+}
+
+.project-box {
+  width: 300px;
+  margin-bottom: 30px;
+  padding: 20px;
+  box-shadow: 4px 4px 10px 0px rgba(48, 52, 55, 0.5),
+                -4px -4px 10px 0px rgba(0, 0, 0, 0.5);
+  /* background-color: #282c34; Adjust background color as needed */
+  border-radius: 10px;
+}
+
+.project-box img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  /* border-color: #860000; */
+  /* border: solid; */
+}
+
+.project-box h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.project-box p {
+  font-size: 18px;
+  margin-bottom: 15px;
+  margin-top: 13px;
+}
+
+.project-box a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #61dafb; /* Adjust background color as needed */
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  font-size: 15px;
+}
+
+.project-box a:hover {
+  background-color: #0d8ecf; /* Adjust hover background color as needed */
+}
+
 
 #contact{
   /* background:
@@ -652,4 +716,29 @@ img, svg {
   article p{
     font-size: small;
   }
+
+  .project-carousel {
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 10px;
+    padding-left: 10% ;
+  }
+  
+  .project-container {
+    display: inline-block;
+  }
+  
+  .project-box {
+    width: 300px;
+    margin-right: 20px; /* Adjust spacing between project boxes */
+    padding: 20px;
+    border-radius: 10px;
+    display: inline-block;
+    vertical-align: top;
+    box-shadow: 4px 4px 10px 0px rgba(48, 52, 55, 0.5),
+                -4px -4px 10px 0px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Additional CSS styles for project box content */
+  
 }

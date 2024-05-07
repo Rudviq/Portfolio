@@ -44,27 +44,27 @@ function App() {
 
   const projects = [
     {
-      title: "Project 1",
-      description: "Description of Project 1",
-      image: "profile.jpg",
+      title: "RUDdle",
+      description: "Game to guess 5 Lettered Word",
+      image: "RUDdle.jpg",
+      link: "https://ruddle.netlify.app/"
+    },
+    {
+      title: "EcoMarket",
+      description: "Ecommerce Platform to order Handcrafted Items",
+      image: "EcoMarket.jpg",
       link: "#"
     },
     {
-      title: "Project 2",
-      description: "Description of Project 2",
-      image: "profile.jpg",
+      title: "Wishlist Wanderers",
+      description: "A Platform to find people having similar interests",
+      image: "WishlistWanderers.jpg",
       link: "#"
     },
     {
-      title: "Project 3",
-      description: "Description of Project 3",
-      image: "profile.jpg",
-      link: "#"
-    },
-    {
-      title: "Project 1",
-      description: "Description of Project 1",
-      image: "profile.jpg",
+      title: "Social Me",
+      description: "Get notified if your friend is in proximity",
+      image: "SocialMe.jpg",
       link: "#"
     },
     {

@@ -74,7 +74,7 @@ function App() {
       title: "Social Me",
       description: "Get notified if your friend is in proximity",
       image: "SocialMe.jpg",
-      link: "#"
+      link: "https://github.com/Rudviq/SocialMe"
     },
     {
       title: "EduMetric",

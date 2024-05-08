@@ -227,7 +227,8 @@ function App() {
     <section id={about}>
       <h2>About Me</h2>
       <div className="about-content-box">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>A graduate student and a passionate problem solver using technology. Enthusiast about Software development and Data analytics and willing to seek experience through innovation in related fields. Believes in teamwork and plans to work in an environment that allows expanding capability to learn new technologies.
+My goal is to bring innovation to problem solving methods and develop solutions that complement the approach to organization.</p>
       </div>
     </section>
     <div className="or-spacer">

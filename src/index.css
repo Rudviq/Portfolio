@@ -970,7 +970,7 @@ img, svg {
   
   /* Additional CSS styles for project box content */
   .project-description {
-    max-height: 100px; /* Adjust the maximum height as needed */
+    max-width: 293px; /* Adjust the maximum height as needed */
     overflow: hidden;
     text-overflow: ellipsis; /* Display ellipsis (...) for overflowed text */
     white-space: normal;

@@ -17,6 +17,7 @@ function App() {
   const skills = isDarkMode? 'skills' : 'skills-light';
   const contact = isDarkMode? 'contact': 'contact-light';
   const project = isDarkMode? 'projects': 'projects-light';
+  const middle = isDarkMode? 'middle' : 'middle-light';
 
   const [text] = useTypewriter({
     words:['DEVELOPER','ENGINEER'],
@@ -61,13 +62,13 @@ function App() {
       title: "EcoMarket",
       description: "Ecommerce Platform to order Handcrafted Items",
       image: "EcoMarket.jpg",
-      link: "#"
+      link: "https://github.com/Rudviq/EcoMarket"
     },
     {
       title: "Wishlist Wanderers",
       description: "A Platform to find people having similar interests",
       image: "WishlistWanderers.jpg",
-      link: "#"
+      link: "https://github.com/Rudviq/WishlistWanderers"
     },
     {
       title: "Social Me",
@@ -76,16 +77,10 @@ function App() {
       link: "#"
     },
     {
-      title: "Project 2",
-      description: "Description of Project 2",
-      image: "profile.jpg",
-      link: "#"
-    },
-    {
-      title: "Project 3",
-      description: "Description of Project 3",
-      image: "profile.jpg",
-      link: "#"
+      title: "EduMetric",
+      description: "A Student Management Web Application",
+      image: "EduMetrics.png",
+      link: "https://github.com/Rudviq/Edumetrics-React"
     }
   ];
 
@@ -120,6 +115,10 @@ function App() {
   const toggleDarkMode = () => {
     setIsDarkMode(!isDarkMode);
   };    
+
+  const openPdf = ()=>{
+    window.open('RudviqBhavsar___Resume.pdf', '_blank');
+  }
 
   
 
@@ -157,7 +156,7 @@ function App() {
           <img src="./RBLogo_light.png" alt="RB" />
         </div>
       )}
-        <div className="middle">
+        <div className={middle}>
           <ul>
             <li><a href="#about">ABOUT</a></li>
             <li><a href="#experience">EXPERIENCE</a></li>
@@ -176,6 +175,7 @@ function App() {
           <label className="switch">
             <input type="checkbox" checked={isDarkMode} onChange={toggleDarkMode} />
             <span className="slider round">{isDarkMode?(<img src="sun.png" alt="moon" />):(<img src="moon.png" style={{marginLeft:'30px'}} alt="moon" />)}</span>
+            
             {/* <img src="sun.png" alt="" /> */}
           </label>
           {/* <div className="toggle-btn" onClick={toggleMode}>{isDarkMode ? 'Light Mode' : 'Dark Mode'}</div> */}
@@ -209,7 +209,10 @@ function App() {
               )}
               </div>
             <div className="trial">
-              <button>
+              {/* <a  href={CVFile} download="RudviqBhavsar___Resume.pdf" className="download-button">
+                <h4 style={{color: isDarkMode?'white':'black'}}>Download CV</h4>
+              </a> */}
+              <button onClick={openPdf}>
                 <h4 style={{color: isDarkMode?'white':'black'}}>Download CV</h4>
                 </button>
             </div>
@@ -278,7 +281,7 @@ function App() {
             <div key={index} className="project-box">
               <img src={project.image} alt={project.title} />
               <h3>{project.title}</h3>
-              <p>{project.description}</p>
+              <p className="project-description">{project.description}</p>
               <a href={project.link}>View Project</a>
             </div>
           ))}

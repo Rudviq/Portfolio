@@ -4,6 +4,19 @@ import './App.css';
 import { useState, useRef, useEffect } from 'react';
 
 function App() {
+  const [isMobileView, setIsMobileView] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(true);
+  const projectCarouselRef = useRef(null);
+  let startX = 0;
+  let scrollLeft = 0;
+
+  const containerClass = isDarkMode ? 'app' : 'app-light';
+  const devName = isDarkMode ? 'devName' : 'dev-light';
+  const jobPos = isDarkMode ? 'jobpos' : 'jobPos-light';
+  const about = isDarkMode? 'about' : 'about-light';
+  const skills = isDarkMode? 'skills' : 'skills-light';
+  const contact = isDarkMode? 'contact': 'contact-light';
+  const project = isDarkMode? 'projects': 'projects-light';
 
   const [text] = useTypewriter({
     words:['DEVELOPER','ENGINEER'],
@@ -20,11 +33,6 @@ function App() {
     { pic:'docker.png',name: 'Docker', proficiency: 'Experienced' },
     { pic:'SQL.png',name: 'SQL', proficiency: 'Experienced' },
   ];
-
-  const [isMobileView, setIsMobileView] = useState(false);
-  const projectCarouselRef = useRef(null);
-  let startX = 0;
-  let scrollLeft = 0;
 
   const handleTouchStart = (e) => {
     startX = e.touches[0].clientX;
@@ -81,6 +89,40 @@ function App() {
     }
   ];
 
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    message: ''
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Add your form submission logic here
+    console.log(formData);
+    // Clear the form after submission
+    setFormData({
+      firstName: '',
+      lastName: '',
+      email: '',
+      message: ''
+    });
+  };
+
+  const toggleDarkMode = () => {
+    setIsDarkMode(!isDarkMode);
+  };    
+
+  
+
   useEffect(() => {
     // Function to check if the screen width is less than a certain threshold
     const checkMobileView = () => {
@@ -104,13 +146,17 @@ function App() {
 
   return (
     <>
-    <div className="app" id="app" >
+    <div className={containerClass} id="app" >
     <header>
-        <div className="left">
-          <div className="logo">
-            <img src="./RBLogo.png" alt="RB" />
-          </div>
+      {isDarkMode ? (
+        <div className="logo">
+          <img src="./RBLogo.png" alt="RB" />
         </div>
+      ) : (
+        <div className="logo-light">
+          <img src="./RBLogo_light.png" alt="RB" />
+        </div>
+      )}
         <div className="middle">
           <ul>
             <li><a href="#about">ABOUT</a></li>
@@ -121,12 +167,18 @@ function App() {
           </ul>
         </div>
         <div className="right">
-          <div className="trial">
+          {/* <div className="trial">
             <button>
               <h4>Download CV</h4>
-              {/* <img src="download.png" alt="Download" /> */}
+              
               </button>
-          </div>
+          </div> */}
+          <label className="switch">
+            <input type="checkbox" checked={isDarkMode} onChange={toggleDarkMode} />
+            <span className="slider round">{isDarkMode?(<img src="sun.png" alt="moon" />):(<img src="moon.png" style={{marginLeft:'30px'}} alt="moon" />)}</span>
+            {/* <img src="sun.png" alt="" /> */}
+          </label>
+          {/* <div className="toggle-btn" onClick={toggleMode}>{isDarkMode ? 'Light Mode' : 'Dark Mode'}</div> */}
         </div>
     </header>
     <section id="header-content">
@@ -139,16 +191,27 @@ function App() {
             <img src='./IMG_0365.png' alt="Profile" className="profile-image"/>
           </div>
           <div className="name">
-            <h5 className="devName">RUDVIQ BHAVSAR</h5>
-            <h5 className='jobpos'> 
+            <h5 className={devName}>RUDVIQ BHAVSAR</h5>   
+            <h5 className={jobPos}> 
               <span> SOFTWARE {text}</span>
               <span className="custom-cursor"></span>
               <Cursor style={{ display: 'inline-block', verticalAlign: 'middle', marginLeft: '5px', width: '8px', height: '40px', backgroundColor: 'green' }}/>
             </h5>
-            {/* <Cursor style={{color: 'red'}}/> */}
             <div id="socials-container">
-              <img src="./linkedin.svg" alt="My LinkedIn profile" className="icon" onClick={() => window.open('https://www.linkedin.com/in/rudviqbhavsar/', '_blank')}/>
-              <img src="./github.svg" alt="My Github profile" className="icon" onClick={() => window.open('https://github.com/Rudviq', '_blank')}/>
+              {isDarkMode?(<><img src="./linkedin.svg" alt="My LinkedIn profile" className="icon" onClick={() => window.open('https://www.linkedin.com/in/rudviqbhavsar/', '_blank')}/>
+                <img src="./github.svg" alt="My Github profile" className="icon" onClick={() => window.open('https://github.com/Rudviq', '_blank')}/>
+                </>
+              ):
+              (<>
+                <img src="./linkedin_dark.svg" alt="My LinkedIn profile" className="icon" onClick={() => window.open('https://www.linkedin.com/in/rudviqbhavsar/', '_blank')}/>
+                <img src="./github_dark.png" alt="My Github profile" className="icon" onClick={() => window.open('https://github.com/Rudviq', '_blank')}/>
+                </>
+              )}
+              </div>
+            <div className="trial">
+              <button>
+                <h4 style={{color: isDarkMode?'white':'black'}}>Download CV</h4>
+                </button>
             </div>
           </div>
           </div>
@@ -158,7 +221,7 @@ function App() {
     <div className="or-spacer">
       <div className="mask"></div>
     </div>
-    <section id="about">
+    <section id={about}>
       <h2>About Me</h2>
       <div className="about-content-box">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
@@ -167,7 +230,7 @@ function App() {
     <div className="or-spacer">
       <div className="mask"></div>
     </div>
-    <section id="skills">
+    <section id={skills}>
       <h2>My Skills</h2>
       <div className="about-content-box1">
           <div className="details-container">
@@ -189,66 +252,9 @@ function App() {
     <div className="or-spacer">
       <div className="mask"></div>
     </div>
-    <section id="projects">
+    <section id={project}>
       <h2>My Projects</h2>
-      {/* <div className="about-content-box">
-        <p>Add your about content here.</p>
-      </div> */}
-      {/* <div className="project-container">
-        <div className="project-box">
-          <img src="profile.jpg" alt="Project 1" />
-          <h3>Project 1</h3>
-          <p>Description of Project 1</p>
-          <a href="profile.jpg">View Project</a>
-        </div>
-        <div className="project-box">
-          <img src="profile.jpg" alt="Project 2" />
-          <h3>Project 2</h3>
-          <p>Description of Project 2</p>
-          <a href="profile.jpg">View Project</a>
-        </div>
-        <div className="project-box">
-          <img src="profile.jpg" alt="Project 2" />
-          <h3>Project 2</h3>
-          <p>Description of Project 2</p>
-          <a href="profile.jpg">View Project</a>
-        </div>
-        <div className="project-box">
-          <img src="profile.jpg" alt="Project 2" />
-          <h3>Project 2</h3>
-          <p>Description of Project 2</p>
-          <a href="profile.jpg">View Project</a>
-        </div>
-        <div className="project-box">
-          <img src="profile.jpg" alt="Project 2" />
-          <h3>Project 2</h3>
-          <p>Description of Project 2</p>
-          <a href="profile.jpg">View Project</a>
-        </div>
-        <div className="project-box">
-          <img src="profile.jpg" alt="Project 2" />
-          <h3>Project 2</h3>
-          <p>Description of Project 2</p>
-          <a href="profile.jpg">View Project</a>
-        </div>
-      </div>
-      <div
-        className="project-carousel"
-        ref={projectCarouselRef}
-        onTouchStart={handleTouchStart}
-        onTouchMove={handleTouchMove}
-        onTouchEnd={handleTouchEnd}
-      >
       
-        {projects.map((project, index) => (
-          <div key={index} className="project-box">
-            <img src={project.image} alt={project.title} />
-            <h3>{project.title}</h3>
-            <p>{project.description}</p>
-            <a href={project.link}>View Project</a>
-          </div>
-        ))}
-      </div> */}
       {isMobileView ? (
         <div
           className="project-carousel"
@@ -257,10 +263,8 @@ function App() {
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
         >
-          {/* Render project boxes */}
           {projects.map((project, index) => (
             <div key={index} className="project-box">
-              {/* Display project details */}
               <img src={project.image} alt={project.title} />
               <h3>{project.title}</h3>
               <p>{project.description}</p>
@@ -270,10 +274,8 @@ function App() {
         </div>
       ) : (
         <div className="project-container">
-          {/* Render project boxes */}
           {projects.map((project, index) => (
             <div key={index} className="project-box">
-              {/* Display project details */}
               <img src={project.image} alt={project.title} />
               <h3>{project.title}</h3>
               <p>{project.description}</p>
@@ -286,17 +288,60 @@ function App() {
     <div className="or-spacer">
       <div className="mask"></div>
     </div>
-    <section id="contact">
+    <section id={contact}>
       <h2>Contact Me</h2>
-      <div className="about-content-box">
-        <p>Add your about content here.</p>
-        <p>This is Rudviq Bhavsar</p>
+      <div className="contact-content-box">
+      <form onSubmit={handleSubmit}>
+        <div className="form-group">
+          <div className="name-group" id="name-group">
+            <div className="form-group" >
+              <label htmlFor="firstName">First Name</label>
+              <input
+                type="text"
+                id="firstName"
+                name="firstName"
+                value={formData.firstName}
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="lastName">Last Name</label>
+              <input
+                type="text"
+                id="lastName"
+                name="lastName"
+                value={formData.lastName}
+                onChange={handleChange}
+                required
+              />
+            </div>
+          </div>
+        </div>
+        <div className="form-group">
+          <label htmlFor="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="message">Message</label>
+          <textarea
+            id="message"
+            name="message"
+            value={formData.message}
+            onChange={handleChange}
+            required
+          ></textarea>
+        </div>
+        <button id="cntct-sub" type="submit">Submit</button>
+      </form>
       </div>
-    </section>
-
-    <section id="footer">
-      <h2>Contact Me</h2>
-      
     </section>
       
   </div>

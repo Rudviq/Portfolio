@@ -209,16 +209,20 @@ input:checked + .slider:before {
   left: 0;
   right: 0;
   bottom: 0;
-  box-shadow: 4px 4px 10px 0px rgba(48, 52, 55, 0.5) inset,
-                -4px -4px 10px 0px rgba(0, 0, 0, 0.5) inset;
+  /* box-shadow: 4px 4px 10px 0px rgba(48, 52, 55, 0.5) inset,
+                -4px -4px 10px 0px rgba(0, 0, 0, 0.5) inset; */
+  box-shadow: 4px 4px 10px 0px #616161 inset,
+                -4px -4px 10px 0px #414141 inset;
   /* background-color: #ccc; */
   -webkit-transition: .4s;
   transition: .4s;
 }
 
 .slider:before {
-  box-shadow: 4px 4px 10px 0px rgba(48, 52, 55, 0.5),
-                -4px -4px 10px 0px rgba(0, 0, 0, 0.5);
+  /* box-shadow: 4px 4px 10px 0px rgba(48, 52, 55, 0.5),
+                -4px -4px 10px 0px rgba(0, 0, 0, 0.5); */
+  box-shadow: 4px 4px 10px 0px #3b3b3b,
+                -4px -4px 10px 0px #808080;
   position: absolute;
   content: "";
   height: 26px;

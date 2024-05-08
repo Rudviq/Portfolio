@@ -158,11 +158,11 @@ function App() {
       )}
         <div className={middle}>
           <ul>
-            <li><a href="#about">ABOUT</a></li>
-            <li><a href="#experience">EXPERIENCE</a></li>
-            <li><a href="#skills">SKILLS</a></li>
-            <li><a href="#projects">PROJECTS</a></li>
-            <li><a href="#contact">CONTACT</a></li>
+            <li><a href={isDarkMode ? "#about" : "#about-light"}>ABOUT</a></li>
+            {/* <li><a href={isDarkMode ? "#about" : "#about-light"}>EXPERIENCE</a></li> */}
+            <li><a href={isDarkMode ? "#skills" : "#skills-light"}>SKILLS</a></li>
+            <li><a href={isDarkMode ? "#projects" : "#projects-light"}>PROJECTS</a></li>
+            <li><a href={isDarkMode ? "#contact" : "#contact-light"}>CONTACT</a></li>
           </ul>
         </div>
         <div className="right">

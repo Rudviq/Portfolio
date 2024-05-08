@@ -472,18 +472,6 @@ input:checked + .slider:before {
 #skills,#projects,#contact{ color:white;}
 #skills-light, #projects-light, #contact-light {color:black;}
 
-/* #projects{ */
-  /* background:
-  linear-gradient(360deg, rgba(29,33,37,1), rgba(0, 0, 0, 0.86)); */
-	/* url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='7.72' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E"); */
-  /* height:100vh; */
-  /* height: calc(100vh - 100px);
-  margin-top: -20px;
-  text-align: center;
-  padding-top: 50px;
-  color: white;
-  font-size: x-large;
-} */
 
 #projects, #projects-light {
   margin-top: -20px;
@@ -493,17 +481,31 @@ input:checked + .slider:before {
 }
 
 .project-container {
-  
   overflow-x: auto;
   white-space: nowrap;
   padding: 10px;
-  padding-left: 10% ;
+  /* padding-left: 10% ; */
   max-width: 1200px;
   justify-content: space-around;
   display: flex;
   margin: 20px auto;
+  transition: transform 0.2s ease;
 }
 
+.prv,.nxt{
+  background: transparent;
+  border-style: none;
+  height: 40px;
+  width: 60px;
+  /* border-radius: 20px; */
+  box-shadow: 4px 4px 10px 0px rgba(48, 52, 55, 0.5),
+                -4px -4px 10px 0px rgba(0, 0, 0, 0.5);
+  padding: 0;
+}
+
+.prv{
+  content: '<';
+}
 .project-box {
   width: 300px;
   margin-bottom: 30px;
@@ -646,17 +648,12 @@ input:checked + .slider:before {
   max-width: 800px;
   box-shadow: 4px 4px 10px 0px rgba(48, 52, 55, 0.5),
                 -4px -4px 10px 0px rgba(0, 0, 0, 0.5);
-  /* height: 400px; */
   padding-left: 60px;
   padding-right: 60px;
   padding-top: 30px;
-  /* line-height: 400px; */
   
 }
 
-/* .contact-content-box p{
-  line-height: 1.8;
-} */
 .contact-form-container {
   max-width: 600px;
   margin: 0 auto;
@@ -712,48 +709,6 @@ button {
 button:hover {
   background-color: #0056b3;
 }
-
-
-/* @media screen and (min-width: 1200px) {
-  .app {
-    padding: -10px;
-  }
-  header {
-    height:100px;
-  }
-  .logo img {
-    height: 150px; 
-  }
-  .middle ul li a {
-    font-size: 22px;
-  }
-  .right {
-    padding-right: 20px;
-  }
-  .header-content-container {
-    padding: 20px; 
-  }
-  .image-container img {
-    height: 370px; 
-    margin-left: 100px;
-  }
-
-  .demo-container{
-    margin-left: 10%;
-  }
-  .name h5 {
-    font-size: 40px;
-  }
-  .job-position {
-    font-size: 24px; 
-  }
-  .about-content-box {
-    height: 400px; 
-  }
-} */
-
-
-/* Skills demo */
 
 
 @media screen and (max-width: 1400px) {

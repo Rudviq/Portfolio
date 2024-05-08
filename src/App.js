@@ -126,6 +126,7 @@ function App() {
     // Function to check if the screen width is less than a certain threshold
     const checkMobileView = () => {
       const screenWidth = window.innerWidth;
+      console.log(screenWidth);
       setIsMobileView(screenWidth < 768); // Adjust threshold as needed
     };
 
@@ -141,6 +142,24 @@ function App() {
     };
   }, []);
 
+  const [startIndex, setStartIndex] = useState(0);
+  const projectsPerPage = 3;
+  const nxt = '>';
+  const prv = '<';
+
+  const nextProjects = () => {
+    const nextIndex = startIndex + projectsPerPage;
+    if (nextIndex < projects.length) {
+      setStartIndex(nextIndex);
+    }
+  };
+
+  const prevProjects = () => {
+    const prevIndex = startIndex - projectsPerPage;
+    if (prevIndex >= 0) {
+      setStartIndex(prevIndex);
+    }
+  };
 
 
   return (
@@ -271,22 +290,36 @@ My goal is to bring innovation to problem solving methods and develop solutions 
             <div key={index} className="project-box">
               <img src={project.image} alt={project.title} />
               <h3>{project.title}</h3>
-              <p>{project.description}</p>
+              <p className="project-description">{project.description}</p>
               <a href={project.link}>View Project</a>
             </div>
           ))}
         </div>
       ) : (
+        <>
         <div className="project-container">
-          {projects.map((project, index) => (
+          {/* {projects.map((project, index) => (
             <div key={index} className="project-box">
               <img src={project.image} alt={project.title} />
               <h3>{project.title}</h3>
               <p className="project-description">{project.description}</p>
               <a href={project.link}>View Project</a>
             </div>
-          ))}
+          ))} */}
+          {projects.slice(startIndex, startIndex + projectsPerPage).map((project, index) => (
+          <div key={index} className="project-box">
+            <img src={project.image} alt={project.title} />
+            <h3>{project.title}</h3>
+            <p className="project-description">{project.description}</p>
+            <a href={project.link}>View Project</a>
+          </div>
+        ))}
         </div>
+        <div className="button-container">
+        <button onClick={prevProjects} className="prv" disabled={startIndex === 0}>{prv}</button>
+        <button onClick={nextProjects} className="nxt" disabled={startIndex + projectsPerPage >= projects.length}>{nxt}</button>
+      </div>
+      </>
       )}
     </section>
     <div className="or-spacer">

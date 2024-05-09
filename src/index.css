@@ -1009,6 +1009,9 @@ footer {
   } */
 
 
+  .demo-container{
+    display: none;
+  }
 
   #about,#skills,#projects,#contact{
     display: none;

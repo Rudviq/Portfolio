@@ -40,7 +40,7 @@ header {
   
 }
 
-.logo img,.logo-light img{
+.logo img,.logo-light img, .logo-footer img, .logo-footer-light img{
   height: 180px;
   width: auto;
 
@@ -989,14 +989,25 @@ footer {
     padding-right: 15px;
   }
 
+  .left-side{
+    font-size: small;
+    margin-top: 29px;
+  }
+
+  .logo-footer img, .logo-footer-light img {
+    height: 125px;
+  }
+
   .right-side{
     margin-right: 150px;
+    
     
   }
 /*   
   .footer_img{
     margin-right: 70px;
   } */
+
 
 
   #header-content,#about,#skills,#projects,#contact{

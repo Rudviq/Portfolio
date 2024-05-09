@@ -390,11 +390,11 @@ My goal is to bring innovation to problem solving methods and develop solutions 
       <div className="right-side">
         
         {isDarkMode ? (
-          <div className="logo">
+          <div className="logo-footer">
             <img src="./RBLogo.png" alt="RB" />
           </div>
         ) : (
-          <div className="logo-light">
+          <div className="logo-footer-light">
             <img src="./RBLogo_light.png" alt="RB" />
           </div>
         )}

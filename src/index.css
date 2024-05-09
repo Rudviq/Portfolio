@@ -998,4 +998,8 @@ footer {
   .footer_img{
     margin-right: 70px;
   } */
+
+  .right{
+    display: none;
+  }
 }

@@ -1000,7 +1000,7 @@ footer {
   } */
 
 
-  #header-content,#about,#skills,#projects,#contact{
+  #skills,#projects,#contact{
     display: none;
   }
 

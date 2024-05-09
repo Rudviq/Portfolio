@@ -1002,4 +1002,10 @@ footer {
   .right{
     display: none;
   }
+
+  #header-content,#about,#skills,#projects,#contact{
+    display: none;
+  }
+
+  
 }

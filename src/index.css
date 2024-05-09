@@ -1009,7 +1009,7 @@ footer {
   } */
 
 
-  .image-container,.devName, .trial{display:none;}
+  .image-container,.devName, #socials-container,.trial{display:none;}
   .demo-container{
     display: none;
   }

@@ -1009,12 +1009,7 @@ footer {
   } */
 
 
-  .image-container,.devName, .jobpos,.trial{display:none;}
-  .demo-container{
-    display: none;
-  }
-
-  #about,#skills,#projects,#contact{
+  #header-content{
     display: none;
   }
 

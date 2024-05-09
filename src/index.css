@@ -988,4 +988,12 @@ footer {
     padding-left: 0;
     padding-right: 15px;
   }
+
+  .right-side{
+    margin-right: 70px;
+  }
+/*   
+  .footer_img{
+    margin-right: 70px;
+  } */
 }

@@ -123,7 +123,7 @@ function App() {
   
 
   useEffect(() => {
-    // Function to check if the screen width is less than a certain threshold
+    // Function to check if the screen widths is less than a certain threshold
     const checkMobileView = () => {
       const screenWidth = window.innerWidth;
       console.log(screenWidth);

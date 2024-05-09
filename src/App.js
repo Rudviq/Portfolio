@@ -389,19 +389,25 @@ My goal is to bring innovation to problem solving methods and develop solutions 
       </div>
       <div className="right-side">
         
-        {isDarkMode ? (
+       
           <div className="logo-footer">
             <img src="./RBLogo.png" alt="RB" />
           </div>
-        ) : (
-          <div className="logo-footer-light">
-            <img src="./RBLogo_light.png" alt="RB" />
-          </div>
-        )}
+        
         <div className='footer_img'>
-          <img src="insta.svg" alt="Insta" />
+          {/* <img src="insta.svg" alt="Insta" />
           <img src="linkedin_color.svg" alt="Linkedin" />
-          <img src="gmail.svg" alt="Gmail" />
+          <img src="gmail.svg" alt="Gmail" /> */}
+          
+          <a href="https://www.linkedin.com/in/rudviqbhavsar">
+            <img src="linkedin_color.svg" alt="Linkedin" />
+          </a>
+          <a href="mailto:rudviq.bhavsar02@gmail.com">
+            <img src="gmail.svg" alt="Gmail" />
+          </a>
+          <a href="https://www.instagram.com/rudvik02">
+            <img src="insta.svg" alt="Insta" />
+          </a>
         </div>
       </div>
     </footer>

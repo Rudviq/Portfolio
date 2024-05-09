@@ -797,7 +797,7 @@ img, svg {
 
 footer {
   background-color: #131314;
-  padding: 20px;
+  /* padding: 20px; */
   display: flex;
   justify-content: space-between;
   padding-bottom: 80px;

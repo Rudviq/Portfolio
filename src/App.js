@@ -380,7 +380,7 @@ My goal is to bring innovation to problem solving methods and develop solutions 
       </form>
       </div>
     </section>
-    <footer style={{padding:isMobileView?'0px':'20px'}}>
+    <footer style={{padding:isMobileView?'0px':'20px', paddingBottom:'80px'}}>
       <div className="left-side">
         <p>Rudviq Sunil Bhavsar</p>
         <p>rudviq.bhavsar02@gmail.com</p>

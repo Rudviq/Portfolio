@@ -227,7 +227,7 @@ function App() {
                 <img src="./github_dark.png" alt="My Github profile" className="icon" onClick={() => window.open('https://github.com/Rudviq', '_blank')}/>
                 </>
               )}
-              </div>
+            </div>
             <div className="trial">
               {/* <a  href={CVFile} download="RudviqBhavsar___Resume.pdf" className="download-button">
                 <h4 style={{color: isDarkMode?'white':'black'}}>Download CV</h4>

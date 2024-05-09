@@ -381,14 +381,14 @@ My goal is to bring innovation to problem solving methods and develop solutions 
         </form>
       </div>
     </section>
-    <footer style={{paddingTop:isMobileView?'0px':'20px'}}>
+    {/* <footer style={{paddingTop:isMobileView?'0px':'20px'}}>
       <div className="left-side">
         <p>Rudviq Sunil Bhavsar</p>
         <p>rudviq.bhavsar02@gmail.com</p>
         <p>(682)-376-3312</p>
       </div>
       <div className="right-side">
-        {/* Social icons and logo */}
+        
         {isDarkMode ? (
           <div className="logo">
             <img src="./RBLogo.png" alt="RB" />
@@ -398,14 +398,13 @@ My goal is to bring innovation to problem solving methods and develop solutions 
             <img src="./RBLogo_light.png" alt="RB" />
           </div>
         )}
-        {/* Add your social icons and logo here */}
         <div className='footer_img'>
           <img src="insta.svg" alt="Insta" />
           <img src="linkedin_color.svg" alt="Linkedin" />
           <img src="gmail.svg" alt="Gmail" />
         </div>
       </div>
-    </footer>
+    </footer> */}
   </div>
   
     

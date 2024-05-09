@@ -316,8 +316,8 @@ My goal is to bring innovation to problem solving methods and develop solutions 
         ))}
         </div>
         <div className="button-container">
-        <button onClick={prevProjects} className="prv" disabled={startIndex === 0}>{prv}</button>
-        <button onClick={nextProjects} className="nxt" disabled={startIndex + projectsPerPage >= projects.length}>{nxt}</button>
+        <button onClick={prevProjects} className="prv" style={{color:isDarkMode?'white':'black'}} disabled={startIndex === 0}>{prv}</button>
+        <button onClick={nextProjects} className="nxt" style={{color:isDarkMode?'white':'black'}} disabled={startIndex + projectsPerPage >= projects.length}>{nxt}</button>
       </div>
       </>
       )}
@@ -380,8 +380,33 @@ My goal is to bring innovation to problem solving methods and develop solutions 
       </form>
       </div>
     </section>
-      
+    <footer>
+      <div className="left-side">
+        <p>Rudviq Sunil Bhavsar</p>
+        <p>rudviq.bhavsar02@gmail.com</p>
+        <p>(682)-376-3312</p>
+      </div>
+      <div className="right-side">
+        {/* Social icons and logo */}
+        {isDarkMode ? (
+          <div className="logo">
+            <img src="./RBLogo.png" alt="RB" />
+          </div>
+        ) : (
+          <div className="logo-light">
+            <img src="./RBLogo_light.png" alt="RB" />
+          </div>
+        )}
+        {/* Add your social icons and logo here */}
+        <div className='footer_img'>
+          <img src="insta.svg" alt="Insta" />
+          <img src="linkedin_color.svg" alt="Linkedin" />
+          <img src="gmail.svg" alt="Gmail" />
+        </div>
+      </div>
+    </footer>
   </div>
+  
     
   </>
   );

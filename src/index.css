@@ -113,7 +113,7 @@ header {
 .trial{
   /* padding: 60px; */
   padding: 12px;
-  padding-right: 60px;
+  /* padding-right: 60px; */
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -507,9 +507,7 @@ input:checked + .slider:before {
   padding: 0;
 }
 
-.prv{
-  content: '<';
-}
+
 .project-box {
   width: 300px;
   margin-bottom: 30px;
@@ -565,6 +563,9 @@ input:checked + .slider:before {
   white-space: normal;
 }
 
+.button-container{
+  margin-bottom: 50px;
+}
 
 #contact, #contact-light{
 
@@ -792,8 +793,46 @@ img, svg {
   vertical-align: middle;
 }
 
+/* Footer.css */
 
+footer {
+  background-color: #131314;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 80px;
+  
+}
 
+.left-side {
+  margin-left: 30px;
+  margin-top: 50px;
+  flex-grow: 1;
+}
+
+.right-side {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.left-side p{
+  color:white;
+}
+.right-side img {
+  height: 130px; /* Adjust the height as needed */
+  margin-left: 10px; /* Add spacing between social icons and logo */
+}
+
+.footer_img {
+  display: flex;
+}
+
+.footer_img img {
+  display: inline-block;
+  height: 30px; /* Adjust the height as needed */
+  margin-right: 10px; /* Add spacing between icons */
+}
 @media screen and (max-width: 431px) {
   /* header{
     flex-direction: column;

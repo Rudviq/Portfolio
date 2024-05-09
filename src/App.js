@@ -381,7 +381,7 @@ My goal is to bring innovation to problem solving methods and develop solutions 
         </form>
       </div>
     </section>
-    {/* <footer style={{paddingTop:isMobileView?'0px':'20px'}}>
+    <footer style={{paddingTop:isMobileView?'0px':'20px'}}>
       <div className="left-side">
         <p>Rudviq Sunil Bhavsar</p>
         <p>rudviq.bhavsar02@gmail.com</p>
@@ -404,7 +404,7 @@ My goal is to bring innovation to problem solving methods and develop solutions 
           <img src="gmail.svg" alt="Gmail" />
         </div>
       </div>
-    </footer> */}
+    </footer>
   </div>
   
     

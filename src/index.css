@@ -990,9 +990,8 @@ footer {
   }
 
   .right-side{
-    /* margin-right: 70px;
-     */
-     display: none;
+    margin-right: 100px;
+    
   }
 /*   
   .footer_img{

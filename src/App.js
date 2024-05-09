@@ -127,7 +127,7 @@ function App() {
     const checkMobileView = () => {
       const screenWidth = window.innerWidth;
       console.log(screenWidth);
-      setIsMobileView(screenWidth < 1290); // Adjust threshold as needed
+      setIsMobileView(screenWidth < 768); // Adjust threshold as needed
       // 768
     };
 

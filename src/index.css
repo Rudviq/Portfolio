@@ -999,9 +999,6 @@ footer {
     margin-right: 70px;
   } */
 
-  .right{
-    display: none;
-  }
 
   #header-content,#about,#skills,#projects,#contact{
     display: none;

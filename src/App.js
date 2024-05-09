@@ -127,7 +127,8 @@ function App() {
     const checkMobileView = () => {
       const screenWidth = window.innerWidth;
       console.log(screenWidth);
-      setIsMobileView(screenWidth < 768); // Adjust threshold as needed
+      setIsMobileView(screenWidth < 1290); // Adjust threshold as needed
+      // 768
     };
 
     // Initial check on mount
@@ -328,59 +329,59 @@ My goal is to bring innovation to problem solving methods and develop solutions 
     <section id={contact}>
       <h2>Contact Me</h2>
       <div className="contact-content-box">
-      <form onSubmit={handleSubmit}>
-        <div className="form-group">
-          <div className="name-group" id="name-group">
-            <div className="form-group" >
-              <label htmlFor="firstName">First Name</label>
-              <input
-                type="text"
-                id="firstName"
-                name="firstName"
-                value={formData.firstName}
-                onChange={handleChange}
-                required
-              />
-            </div>
-            <div className="form-group">
-              <label htmlFor="lastName">Last Name</label>
-              <input
-                type="text"
-                id="lastName"
-                name="lastName"
-                value={formData.lastName}
-                onChange={handleChange}
-                required
-              />
+        <form onSubmit={handleSubmit}>
+          <div className="form-group">
+            <div className="name-group" id="name-group">
+              <div className="form-group" >
+                <label htmlFor="firstName">First Name</label>
+                <input
+                  type="text"
+                  id="firstName"
+                  name="firstName"
+                  value={formData.firstName}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+              <div className="form-group">
+                <label htmlFor="lastName">Last Name</label>
+                <input
+                  type="text"
+                  id="lastName"
+                  name="lastName"
+                  value={formData.lastName}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
             </div>
           </div>
-        </div>
-        <div className="form-group">
-          <label htmlFor="email">Email</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="message">Message</label>
-          <textarea
-            id="message"
-            name="message"
-            value={formData.message}
-            onChange={handleChange}
-            required
-          ></textarea>
-        </div>
-        <button id="cntct-sub" type="submit">Submit</button>
-      </form>
+          <div className="form-group">
+            <label htmlFor="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="message">Message</label>
+            <textarea
+              id="message"
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
+              required
+            ></textarea>
+          </div>
+          <button id="cntct-sub" type="submit">Submit</button>
+        </form>
       </div>
     </section>
-    <footer style={{padding:isMobileView?'0px':'20px', paddingBottom:'80px'}}>
+    <footer style={{paddingTop:isMobileView?'0px':'20px'}}>
       <div className="left-side">
         <p>Rudviq Sunil Bhavsar</p>
         <p>rudviq.bhavsar02@gmail.com</p>

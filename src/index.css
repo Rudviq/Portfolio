@@ -797,10 +797,11 @@ img, svg {
 
 footer {
   background-color: #131314;
-  /* padding: 20px; */
   display: flex;
   justify-content: space-between;
   padding-bottom: 80px;
+  padding-left: 40px;
+  padding-right: 40px;
   
 }
 
@@ -976,4 +977,14 @@ footer {
     white-space: normal;
   }
   
+  .contact-content-box{
+    /* width:85%; */
+    max-width: 260px;
+  }
+
+  footer{
+    padding-bottom: 80px;
+    padding-left: 0;
+    padding-right: 0;
+  }
 }

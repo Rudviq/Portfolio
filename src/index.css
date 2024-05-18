@@ -3,6 +3,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
+  /* font-family: "Fira"; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -19,8 +20,8 @@ code {
 	radial-gradient(circle at 72% 21%, rgba(144,205,255,1), rgba(220,71,71,0.49)), */
   /* linear-gradient(0deg, rgba(240, 240, 240, 1), rgba(255, 255, 255, 0.9)),
   url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='10' numOctaves='6' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E"); */
-  linear-gradient(0deg, rgba(29,33,37,1), rgba(0, 0, 0, 0.9)),
-  url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='10' numOctaves='6' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  linear-gradient(0deg, rgba(29,33,37,1), rgba(0, 0, 0, 0.9));
+  /* url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='10' numOctaves='6' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E"); */
   /* height: 100vh; */
   /* background: url(../public/cool.svg); */
 }
@@ -74,7 +75,8 @@ header {
   font-size: x-large;
   margin: 0;
   background-color: transparent;
-
+  position: relative; /* Necessary for the pseudo-element */
+  text-decoration: none; /* Remove default underline */
 }
 
 .middle ul li a {
@@ -89,17 +91,17 @@ header {
   -webkit-text-fill-color: transparent;
 }
 
-.middle ul li a:hover, .middle-light ul li a:hover  {
+/* .middle ul li a:hover, .middle-light ul li a:hover  {
     font-size: x-large;
     text-decoration: solid;
     font-weight: bold;
     background-color: transparent;
     margin: 0;
     
-}
+} */
 
 
-.middle ul li a:hover{
+/* .middle ul li a:hover{
   background: -webkit-linear-gradient(top right,#e8fa46,#ff9900 );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -109,6 +111,29 @@ header {
   background: -webkit-linear-gradient(top right,#ff9900,#300606);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+} */
+
+.middle ul li a:hover, .middle-light ul li a:hover {
+  background: -webkit-linear-gradient(top right, #e8fa46, #ff9900);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.middle ul li a::after, .middle-light ul li a::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background: -webkit-linear-gradient(top right, #e8fa46, #ff9900);
+  /* background-color: #e8fa46; Inherit the color */
+  transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+}
+
+.middle ul li a:hover::after, .middle-light ul li a:hover::after {
+  width: 100%;
+  left: 0;
 }
 
 .trial{
@@ -433,10 +458,12 @@ input:checked + .slider:before {
   color: white;
   font-size: x-large;
   padding-bottom: 35px;
+  position: relative;
   /* text-align: justify; */
 }
 
 #about-light{
+  position: relative;
   margin-top: 0;
   text-align: center;
   padding-top: 30px;
@@ -452,11 +479,30 @@ input:checked + .slider:before {
   text-align: justify;
 }
 
+#about h1.big,#about-light h1.big,#skills-light h1.big,#projects-light h1.big,  #contact-light h1.big,
+#skills h1.big,#projects h1.big,  #contact h1.big{
+  position: absolute;
+  top: 0px;
+  left: 50%;
+  font-size: 7vw;
+  color: rgba(255, 255, 255, 0.1);
+  z-index: 1;
+  font-weight: 900;
+  transform: translateX(-50%);
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+#about-light h1.big, #skills-light h1.big,#projects-light h1.big,  #contact-light h1.big  {
+  color: rgba(67, 9, 9, 0.1);
+}
+
 #about h2, #skills h2, #contact h2, #projects h2{
   background-color: transparent;
   background: -webkit-linear-gradient(top right,#ff4d4d,#d2ff68 );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  font-weight: 900;
 }
 
 #about-light h2, #skills-light h2, #contact-light h2, #projects-light h2{
@@ -467,9 +513,10 @@ input:checked + .slider:before {
 }
 
 #skills , #skills-light{
+  position: relative;
   margin-top: -20px;
   text-align: center;
-  padding-top: 50px;
+  padding-top: 30px;
   font-size: x-large;
   padding-bottom: 35px;
 }
@@ -479,9 +526,10 @@ input:checked + .slider:before {
 
 
 #projects, #projects-light {
+  position: relative;
   margin-top: -20px;
   text-align: center;
-  padding-top: 50px;
+  padding-top: 30px;
   font-size: x-large;
 }
 
@@ -569,11 +617,11 @@ input:checked + .slider:before {
 }
 
 #contact, #contact-light{
-
+  position: relative;
   height: calc(100vh - 100px);
   margin-top: -20px;
   text-align: center;
-  padding-top: 50px;
+  padding-top: 30px;
   font-size: x-large;
 }
 
@@ -920,14 +968,20 @@ footer {
   #socials-container img{
     height:50px;
   }
+  #about h1.big, #about-light h1.big, #skills-light h1.big, #projects-light h1.big, #contact-light h1.big, #skills h1.big, #projects h1.big, #contact h1.big {
+    font-size: 18vw;
+    top: auto;
+  }
 
   .about-content-box,.about-content-box1{
-    max-width: 206px;
-    height: 590px;
+    max-width: 275px;
+    height: 430px;
+    padding-left: 30px;
+    padding-right: 30px;
   }
 
   .about-content-box p {
-    line-height: 1.8;
+    line-height: 1.7;
     font-size: 1rem;
   }
 

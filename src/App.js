@@ -179,7 +179,7 @@ function App() {
         <div className={middle}>
           <ul>
             <li><a href={isDarkMode ? "#about" : "#about-light"}>ABOUT</a></li>
-            {/* <li><a href={isDarkMode ? "#about" : "#about-light"}>EXPERIENCE</a></li> */}
+            <li><a href={isDarkMode ? "#experience" : "#experience-light"}>EXPERIENCE</a></li>
             <li><a href={isDarkMode ? "#skills" : "#skills-light"}>SKILLS</a></li>
             <li><a href={isDarkMode ? "#projects" : "#projects-light"}>PROJECTS</a></li>
             <li><a href={isDarkMode ? "#contact" : "#contact-light"}>CONTACT</a></li>
@@ -208,7 +208,7 @@ function App() {
           <div className='demo-container'>
           </div>
           <div className="image-container">
-            <img src='./IMG_0365.png' alt="Profile" className="profile-image"/>
+            <img src='./IMG_2318.jpg' alt="Profile" className="profile-image"/>
           </div>
           <div className="name">
             <h5 className={devName}>RUDVIQ BHAVSAR</h5>   
@@ -245,6 +245,7 @@ function App() {
       <div className="mask"></div>
     </div>
     <section id={about}>
+      <h1 class="big">About</h1>
       <h2>About Me</h2>
       <div className="about-content-box">
         <p>A graduate student and a passionate problem solver using technology. Enthusiast about Software development and Data analytics and willing to seek experience through innovation in related fields. Believes in teamwork and plans to work in an environment that allows expanding capability to learn new technologies.
@@ -255,6 +256,7 @@ My goal is to bring innovation to problem solving methods and develop solutions 
       <div className="mask"></div>
     </div>
     <section id={skills}>
+    <h1 class="big">Skills</h1>
       <h2>My Skills</h2>
       <div className="about-content-box1">
           <div className="details-container">
@@ -277,6 +279,7 @@ My goal is to bring innovation to problem solving methods and develop solutions 
       <div className="mask"></div>
     </div>
     <section id={project}>
+      <h1 class="big">Projects</h1>
       <h2>My Projects</h2>
       
       {isMobileView ? (
@@ -327,6 +330,7 @@ My goal is to bring innovation to problem solving methods and develop solutions 
       <div className="mask"></div>
     </div>
     <section id={contact}>
+      <h1 class="big">Contact</h1>
       <h2>Contact Me</h2>
       <div className="contact-content-box">
         <form onSubmit={handleSubmit}>

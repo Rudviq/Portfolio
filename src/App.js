@@ -260,8 +260,8 @@ My goal is to bring innovation to problem solving methods and develop solutions 
       <h1 class="big">Experience</h1>
       <h2>Experience & Education</h2>
 
-      {/* {isMobileView?(
-       <> */}
+      {isMobileView?(
+       <>
       <div className="project-box">
           <div class="education-container">
             <div class="logo-container">
@@ -318,13 +318,13 @@ My goal is to bring innovation to problem solving methods and develop solutions 
             </div>
           </div>
       </div>
-      {/* </>
+      </>
        
        ):(
        
        <img src="./Experience.png" alt="Experience" className='expImg'/>
        
-       )} */}
+       )}
       
       {/* <div className="about-content-box">
         <p>A graduate student and a passionate problem solver using technology. Enthusiast about Software development and Data analytics and willing to seek experience through innovation in related fields. Believes in teamwork and plans to work in an environment that allows expanding capability to learn new technologies.

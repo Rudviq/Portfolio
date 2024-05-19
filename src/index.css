@@ -1100,6 +1100,33 @@ footer {
     font-size: 14px;
   }
 
+  .university-title{
+    font-family: 'Comfortaa', sans-serif;
+    
+  }
+
+  .degree,.year{
+    font-family: 'Days One', sans-serif;
+    font-weight: 800;
+  }
+
+  .degree{
+    background: -webkit-linear-gradient(top left,#ece82c,#fa7850 );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .year{
+    background: -webkit-linear-gradient(top left,#778BFF,#394AF8 );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .major{
+    font-family: 'Verdana', sans-serif;
+    
+  }
+
   .education-container {
     display: flex;
     align-items: flex-start; /* Align items at the start of the flex container */

@@ -451,7 +451,7 @@ input:checked + .slider:before {
   color: white; /* Color for the job position */
 }
 
-#about{
+#about, #exp{
   margin-top: 0;
   text-align: center;
   padding-top: 30px;
@@ -462,7 +462,7 @@ input:checked + .slider:before {
   /* text-align: justify; */
 }
 
-#about-light{
+#about-light, #exp-light{
   position: relative;
   margin-top: 0;
   text-align: center;
@@ -480,7 +480,8 @@ input:checked + .slider:before {
 }
 
 #about h1.big,#about-light h1.big,#skills-light h1.big,#projects-light h1.big,  #contact-light h1.big,
-#skills h1.big,#projects h1.big,  #contact h1.big{
+#skills h1.big,#projects h1.big,  #contact h1.big,
+#exp h1.big, #exp-light h1.big{
   position: absolute;
   top: 0px;
   left: 50%;
@@ -497,7 +498,7 @@ input:checked + .slider:before {
   color: rgba(67, 9, 9, 0.1);
 }
 
-#about h2, #skills h2, #contact h2, #projects h2{
+#about h2, #skills h2, #contact h2, #projects h2, #exp h2{
   background-color: transparent;
   background: -webkit-linear-gradient(top right,#ff4d4d,#d2ff68 );
   -webkit-background-clip: text;
@@ -505,13 +506,17 @@ input:checked + .slider:before {
   font-weight: 900;
 }
 
-#about-light h2, #skills-light h2, #contact-light h2, #projects-light h2{
+#about-light h2, #skills-light h2, #contact-light h2, #projects-light h2, #exp-light h2{
   background-color: transparent;
   background: -webkit-linear-gradient(top right,#c12929,#ff4d4d );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
+.expImg{
+  height:80vh;
+  width: auto;
+}
 #skills , #skills-light{
   position: relative;
   margin-top: -20px;
@@ -968,7 +973,9 @@ footer {
   #socials-container img{
     height:50px;
   }
-  #about h1.big, #about-light h1.big, #skills-light h1.big, #projects-light h1.big, #contact-light h1.big, #skills h1.big, #projects h1.big, #contact h1.big {
+  #about h1.big, #about-light h1.big, #skills-light h1.big, #projects-light h1.big, 
+  #contact-light h1.big, #skills h1.big, #projects h1.big, #contact h1.big ,
+  #exp h1.big, #exp-light h1.big{
     font-size: 18vw;
     top: auto;
   }
@@ -1034,9 +1041,14 @@ footer {
   
   .contact-content-box{
     /* width:85%; */
-    max-width: 200px;
+    max-width: 275px;
+    padding-left: 31px;
+    padding-right: 31px;
   }
 
+  .form-group input, .form-group textarea{
+    width:85%;
+  }
   footer{
     padding-bottom: 80px;
     padding-left: 0;

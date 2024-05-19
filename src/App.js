@@ -14,6 +14,7 @@ function App() {
   const devName = isDarkMode ? 'devName' : 'dev-light';
   const jobPos = isDarkMode ? 'jobpos' : 'jobPos-light';
   const about = isDarkMode? 'about' : 'about-light';
+  const experience = isDarkMode? 'exp' : 'exp-light';
   const skills = isDarkMode? 'skills' : 'skills-light';
   const contact = isDarkMode? 'contact': 'contact-light';
   const project = isDarkMode? 'projects': 'projects-light';
@@ -251,6 +252,18 @@ function App() {
         <p>A graduate student and a passionate problem solver using technology. Enthusiast about Software development and Data analytics and willing to seek experience through innovation in related fields. Believes in teamwork and plans to work in an environment that allows expanding capability to learn new technologies.
 My goal is to bring innovation to problem solving methods and develop solutions that complement the approach to organization.</p>
       </div>
+    </section>
+    <div className="or-spacer">
+      <div className="mask"></div>
+    </div>
+    <section id={experience}>
+      <h1 class="big">Experience</h1>
+      <h2>Experience & Education</h2>
+      <img src="./Experience.png" alt="Experience" className='expImg'/>
+      {/* <div className="about-content-box">
+        <p>A graduate student and a passionate problem solver using technology. Enthusiast about Software development and Data analytics and willing to seek experience through innovation in related fields. Believes in teamwork and plans to work in an environment that allows expanding capability to learn new technologies.
+My goal is to bring innovation to problem solving methods and develop solutions that complement the approach to organization.</p>
+      </div> */}
     </section>
     <div className="or-spacer">
       <div className="mask"></div>

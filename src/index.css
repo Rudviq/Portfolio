@@ -992,6 +992,10 @@ footer {
     font-size: 1rem;
   }
 
+  .expImg{
+    display: none;
+  }
+
   .details-container{
     padding: 0;
     padding-top: 2.1rem;
@@ -1079,5 +1083,54 @@ footer {
     padding-right: 15px;
   }
 
+  .education-container {
+    flex-direction: column;
+    align-items: flex-start;
+  } 
+
+  .logo-container {
+    display: flex;
+    margin-bottom: 10px;
+  }
+
+  .university-title,
+  .degree,
+  .major,
+  .year {
+    font-size: 14px;
+  }
+
+  .education-container {
+    display: flex;
+    align-items: flex-start; /* Align items at the start of the flex container */
+    margin-bottom: 20px;
+  }
+  
+  .logo-container {
+    flex-shrink: 0; /* Prevent the logo from shrinking */
+    margin-right: 20px; /* Space between the logo and details */
+  }
+  
+  .logo {
+    width: 80px; /* Adjust the size as needed */
+    height: auto;
+  }
+  
+  .details-container {
+    flex-grow: 1; /* Allow the details container to take up remaining space */
+  }
+  
+  .university-title {
+    font-weight: bold;
+    margin: 0;
+    padding-bottom: 5px;
+  }
+  
+  .degree,
+  .major,
+  .year {
+    margin: 0;
+    padding-bottom: 5px;
+  }
   
 }

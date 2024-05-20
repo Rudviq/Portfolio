@@ -234,7 +234,7 @@ function App() {
                 <h4 style={{color: isDarkMode?'white':'black'}}>Download CV</h4>
               </a> */}
               <button onClick={openPdf}>
-                <h4 style={{color: isDarkMode?'white':'black'}}>Download CV</h4>
+                <h4 style={{color:'white'}}>Download CV</h4>
                 </button>
             </div>
           </div>
@@ -414,8 +414,17 @@ My goal is to bring innovation to problem solving methods and develop solutions 
       <div className="contact-content-box">
         <form onSubmit={handleSubmit}>
           <div className="form-group">
-            <div className="name-group" id="name-group">
-              <div className="form-group" >
+          <label htmlFor="firstName">Name</label>
+                <input
+                  type="text"
+                  id="firstName"
+                  name="firstName"
+                  value={formData.firstName}
+                  onChange={handleChange}
+                  required
+                />
+            {/* <div className="name-group" id="name-group">
+              <div className="form-group-f" >
                 <label htmlFor="firstName">First Name</label>
                 <input
                   type="text"
@@ -426,7 +435,7 @@ My goal is to bring innovation to problem solving methods and develop solutions 
                   required
                 />
               </div>
-              <div className="form-group">
+              <div className="form-group-f">
                 <label htmlFor="lastName">Last Name</label>
                 <input
                   type="text"
@@ -437,7 +446,7 @@ My goal is to bring innovation to problem solving methods and develop solutions 
                   required
                 />
               </div>
-            </div>
+            </div> */}
           </div>
           <div className="form-group">
             <label htmlFor="email">Email</label>

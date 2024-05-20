@@ -44,7 +44,7 @@ header {
 .logo img,.logo-light img, .logo-footer img, .logo-footer-light img{
   height: 180px;
   width: auto;
-
+  margin-left: 70px;
 }
 
 .left {
@@ -68,7 +68,7 @@ header {
 }
 
 .middle ul li, .middle-light ul li {
-  margin-right: 20px;
+  margin-right: 40px;
 }
 
 .middle ul li a ,.middle-light ul li a{
@@ -113,13 +113,18 @@ header {
     -webkit-text-fill-color: transparent;
 } */
 
-.middle ul li a:hover, .middle-light ul li a:hover {
+.middle ul li a:hover{
   background: -webkit-linear-gradient(top right, #e8fa46, #ff9900);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+.middle-light ul li a:hover {
+  background: -webkit-linear-gradient(top right, #8f3aab, #1a0e89);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
-.middle ul li a::after, .middle-light ul li a::after {
+.middle ul li a::after {
   content: '';
   position: absolute;
   left: 50%;
@@ -131,6 +136,18 @@ header {
   transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
 }
 
+.middle-light ul li a::after{
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background: -webkit-linear-gradient(top right, #8f3aab, #1a0e89);
+  /* background: -webkit-linear-gradient(top right, #e8fa46, #ff9900); */
+  /* background-color: #e8fa46; Inherit the color */
+  transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+}
 .middle ul li a:hover::after, .middle-light ul li a:hover::after {
   width: 100%;
   left: 0;
@@ -156,11 +173,13 @@ header {
   box-shadow: 4px 4px 10px 0px rgba(48, 52, 55, 0.5),
                 -4px -4px 10px 0px rgba(0, 0, 0, 0.5);
   padding: 0;
+  background: linear-gradient(to top left, #303437, #007bff);
   
 }
 
 .trial button:hover{
-  background: linear-gradient(to top left, #3c4145, #2d3339);
+  /* background: linear-gradient(to top left, #3c4145, #2d3339); */
+  background: linear-gradient(to top left, #303437, #0355ac);
 }
 
 
@@ -200,6 +219,7 @@ header {
   display: inline-block;
   width: 60px;
   height: 34px;
+  margin-right:70px;
 }
 
 .switch input {
@@ -332,6 +352,7 @@ input:checked + .slider:before {
   
   padding: 0;
   margin: 0;
+
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -345,25 +366,26 @@ input:checked + .slider:before {
 
 .devName{
   font-size: 61px;
-  
-  background: -webkit-linear-gradient(top left,#914dff,#ffde68 );
+  background: -webkit-linear-gradient(top left, #724fff, #aaa5eb);
+  /* background: -webkit-linear-gradient(top left,#914dff,#ffde68 ); */
 }
 
 .dev-light{
   font-size: 61px;
-  
-  background: -webkit-linear-gradient(top left,#b16820,#ffd332 );
+  background: -webkit-linear-gradient(top left, #493798, #2f2b5c);
+  /* background: -webkit-linear-gradient(top left,#b16820,#ffd332 ); */
 }
 
 .jobpos{
-  font-size: 50px;
-  background: -webkit-linear-gradient(top left, #eee7fb, #ffde68);
+  font-size: 32px;
+  background: -webkit-linear-gradient(top left, #eee7fb, #ffffff);
 }
 
 .jobPos-light{
-  font-size: 50px;
+  font-size: 32px;
   /* color: white; */
-  background: -webkit-linear-gradient(top left, #3e2570, #336980);
+  /* background: -webkit-linear-gradient(top left, #3e2570, #336980); */
+  background: -webkit-linear-gradient(top left, #3d3d3d, #3d3d3d); 
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -504,6 +526,7 @@ input:checked + .slider:before {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: 900;
+  text-align: center;
 }
 
 #about-light h2, #skills-light h2, #contact-light h2, #projects-light h2, #exp-light h2{
@@ -511,8 +534,13 @@ input:checked + .slider:before {
   background: -webkit-linear-gradient(top right,#c12929,#ff4d4d );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  text-align: center;
 }
 
+
+#exp-light img{
+  background: linear-gradient(0deg, rgba(29,33,37,1), rgba(0, 0, 0, 0.9));
+}
 .expImg{
   height:80vh;
   width: auto;
@@ -552,13 +580,16 @@ input:checked + .slider:before {
 
 .prv,.nxt{
   background: transparent;
-  border-style: none;
+
   height: 40px;
-  width: 60px;
-  /* border-radius: 20px; */
+  width: 40px;
+  border-radius: 20px;
   box-shadow: 4px 4px 10px 0px rgba(48, 52, 55, 0.5),
                 -4px -4px 10px 0px rgba(0, 0, 0, 0.5);
   padding: 0;
+  margin-left: 15px;
+  margin-right: 15px;
+  border: solid #0e529b 1px;
 }
 
 
@@ -598,16 +629,18 @@ input:checked + .slider:before {
 .project-box a {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #61dafb; /* Adjust background color as needed */
+  /* background-color: #61dafb; Adjust background color as needed */
   color: white;
-  border-radius: 5px;
+  border-radius: 25px;
   text-decoration: none;
   transition: background-color 0.3s ease;
   font-size: 15px;
+  background: linear-gradient(to top left, #303437, #007bff);
 }
 
 .project-box a:hover {
-  background-color: #0d8ecf; /* Adjust hover background color as needed */
+  background: linear-gradient(to top left, #303437, #0355ac);
+  /* background-color: #0d8ecf; Adjust hover background color as needed */
 }
 
 .project-description {
@@ -625,14 +658,16 @@ input:checked + .slider:before {
   position: relative;
   height: calc(100vh - 100px);
   margin-top: -20px;
-  text-align: center;
+  /* text-align: center; */
   padding-top: 30px;
   font-size: x-large;
 }
 
 #cntct-sub{
   margin-bottom: 30px;
-  /* border-radius: 2px; */
+  border-radius: 20px;
+  background: linear-gradient(to top left, #303437, #007bff);
+  margin-left:50%;
 }
 .about-content-box {
   border-radius: 10px;
@@ -684,7 +719,7 @@ input:checked + .slider:before {
 .custom-cursor {
   display: inline-block;
   width: 4px;
-  height: 40px;
+  height: 28px;
   border-radius: 10%;
   background-color: rgb(255, 255, 255);
   animation: blink 1s infinite;
@@ -723,16 +758,22 @@ form{
 }
 .form-group {
   margin-bottom: 20px;
+  padding-left: 25%;
 }
 
-#name-group{
-  margin-left: auto;
-  margin-right:auto;
-  justify-content: center;
+.form-group-f {
+  flex:1 1;
+  width:25%;
 }
+
+.form-group label{
+  font-size: large;
+}
+
 .name-group {
   display: flex;
-  margin-left: 20px;
+  /* margin-left: 20px; */
+  margin-right: 107px;
 }
 
 .name-group .form-group {
@@ -903,6 +944,7 @@ footer {
 
   .logo img, .logo-light img {
     height: 150px;
+    margin-left: 0;
   }
   
   .middle,.middle-light{
@@ -916,6 +958,10 @@ footer {
   }
   .trial button{
     height:50px;
+  }
+
+  .switch{
+    margin-right:0;
   }
 
   .demo-container{

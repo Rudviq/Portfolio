@@ -1099,6 +1099,15 @@ footer {
   .form-group input, .form-group textarea{
     width:85%;
   }
+
+  .form-group{
+    padding-left: 6%;
+  }
+
+  #cntct-sub{
+    margin-left: 37%;
+  }
+  
   footer{
     padding-bottom: 80px;
     padding-left: 0;

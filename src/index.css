@@ -413,8 +413,8 @@ input:checked + .slider:before {
 }
 
 #socials-container img:hover{
-  height: 60px;
-  width: 60px;
+  height: 2.5rem;
+  width: 2.5rem;
   box-shadow: 4px 4px 10px 0px rgba(48, 52, 55, 0.5),
                 -4px -4px 10px 0px rgba(0, 0, 0, 0.5);
 }
@@ -538,9 +538,9 @@ input:checked + .slider:before {
 }
 
 
-#exp-light img{
+/* #exp-light img{
   background: linear-gradient(0deg, rgba(29,33,37,1), rgba(0, 0, 0, 0.9));
-}
+} */
 .expImg{
   height:80vh;
   width: auto;

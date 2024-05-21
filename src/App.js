@@ -265,7 +265,7 @@ My goal is to bring innovation to problem solving methods and develop solutions 
       <div className="project-box">
           <div class="education-container">
             <div class="logo-container">
-              <img src="./sppu.png" alt="University Logo" class="logo" style={{width:'105px', height:'auto'}}/>
+              <img src="./sppu.png" alt="University Logo" className="logo" style={{width:'105px', height:'auto'}}/>
               <h3 class="university-title">University of Pune</h3>
             </div>
             <div class="details-container" style={{width:'100%', padding:0}}>

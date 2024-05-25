@@ -280,7 +280,7 @@ My goal is to bring innovation to problem solving methods and develop solutions 
       <div className="project-box">
           <div class="education-container">
             <div class="logo-container" style={{width:'100%',justifyContent:'center'}}>
-              <img src="./infosys.png" alt="University Logo" class="logo" style={{width:'105px',borderRadius:'0', height:'auto'}}/>
+              <img src="./infosys.png" alt="University Logo" className="logo" style={{width:'105px',borderRadius:'0', height:'auto'}}/>
               {/* <h3 class="university-title">University of Pune</h3> */}
             </div>
             <div class="details-container" style={{width:'100%', padding:0}}>
@@ -293,7 +293,7 @@ My goal is to bring innovation to problem solving methods and develop solutions 
       <div className="project-box">
           <div class="education-container">
             <div class="logo-container">
-              <img src="./uta.png" alt="University Logo" class="logo" style={{width:'105px',borderRadius:'0', height:'auto'}}/>
+              <img src="./uta.png" alt="University Logo" className="logo" style={{width:'105px',borderRadius:'0', height:'auto'}}/>
               <h3 class="university-title">University of Texas at Arlington</h3>
             </div>
             <div class="details-container" style={{width:'100%', padding:0}}>
@@ -308,7 +308,7 @@ My goal is to bring innovation to problem solving methods and develop solutions 
       <div className="project-box">
           <div class="education-container">
             <div class="logo-container">
-              <img src="./uta.png" alt="University Logo" class="logo" style={{width:'105px',borderRadius:'0', height:'auto'}}/>
+              <img src="./uta.png" alt="University Logo" className="logo" style={{width:'105px',borderRadius:'0', height:'auto'}}/>
               <h3 class="university-title">University of Texas at Arlington</h3>
             </div>
             <div class="details-container" style={{width:'100%', padding:0}}>

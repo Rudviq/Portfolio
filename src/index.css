@@ -549,9 +549,13 @@ input:checked + .slider:before {
 /* #exp-light img{
   background: linear-gradient(0deg, rgba(29,33,37,1), rgba(0, 0, 0, 0.9));
 } */
-.expImg{
+.expImg,.expImg-light{
   height:80vh;
   width: auto;
+}
+
+.expImg-light{
+  background: linear-gradient(0deg, rgba(29,33,37,1), rgba(0, 0, 0, 0.9));
 }
 #skills , #skills-light{
   position: relative;
@@ -1085,7 +1089,7 @@ footer {
     
   }
 
-  .expImg{
+  .expImg,.expImg-light{
     display: none;
   }
 

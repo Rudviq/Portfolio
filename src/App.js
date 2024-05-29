@@ -24,6 +24,7 @@ function App() {
   const contact = isDarkMode? 'contact': 'contact-light';
   const project = isDarkMode? 'projects': 'projects-light';
   const middle = isDarkMode? 'middle' : 'middle-light';
+  const expImg = isDarkMode? 'expImg' : 'expImg-light';
 
   const [text] = useTypewriter({
     words:['DEVELOPER','ENGINEER'],
@@ -383,7 +384,7 @@ function App() {
        
        ):(
        
-       <img src="./Experience.png" alt="Experience" className='expImg'/>
+       <img src="./Experience.png" alt="Experience" className={expImg}/>
        
        )}
       

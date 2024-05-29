@@ -25,6 +25,7 @@ function App() {
   const project = isDarkMode? 'projects': 'projects-light';
   const middle = isDarkMode? 'middle' : 'middle-light';
   const expImg = isDarkMode? 'expImg' : 'expImg-light';
+  const degree = isDarkMode? 'degree': 'degree-light';
 
   const [text] = useTypewriter({
     words:['DEVELOPER','ENGINEER'],
@@ -332,7 +333,7 @@ function App() {
             </div>
             <div class="details-container" style={{width:'100%', padding:0}}>
               
-              <p class="degree">Bachelor of Engineering</p>
+              <p class={degree}>Bachelor of Engineering</p>
               <p class="major">Information Technology</p>
               <p class="year">2016 - 2020</p>
             </div>
@@ -347,7 +348,7 @@ function App() {
             </div>
             <div class="details-container" style={{width:'100%', padding:0}}>
               
-              <p class="degree">Systems Engineer</p>
+              <p class={degree}>Systems Engineer</p>
               <p class="year">2020 - 2022</p>
             </div>
           </div>
@@ -360,7 +361,7 @@ function App() {
             </div>
             <div class="details-container" style={{width:'100%', padding:0}}>
               
-              <p class="degree">Master of Science</p>
+              <p class={degree}>Master of Science</p>
               <p class="major">Computer Science</p>
               <p class="year">2022 - 2024</p>
             </div>
@@ -375,7 +376,7 @@ function App() {
             </div>
             <div class="details-container" style={{width:'100%', padding:0}}>
               
-              <p class="degree">Student Computer Assistant</p>
+              <p class={degree}>Student Computer Assistant</p>
               <p class="year">2022 - 2024</p>
             </div>
           </div>

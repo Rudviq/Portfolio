@@ -1200,7 +1200,7 @@ footer {
   }
 
   .university-title,
-  .degree,
+  .degree,.degree-light,
   .major,
   .year {
     font-size: 14px;
@@ -1211,13 +1211,19 @@ footer {
     
   }
 
-  .degree,.year{
+  .degree,.year,.degree-light{
     font-family: 'Days One', sans-serif;
     font-weight: 800;
   }
 
   .degree{
     background: -webkit-linear-gradient(top left,#ece82c,#fa7850 );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .degree-light{
+    background: -webkit-linear-gradient(top left,#fa7850 ,#e1562b );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
@@ -1259,7 +1265,7 @@ footer {
     padding-bottom: 5px;
   }
   
-  .degree,
+  .degree,.degree-light,
   .major,
   .year {
     margin: 0;

@@ -523,7 +523,7 @@ input:checked + .slider:before {
   font-family: 'Fira Sans', sans-serif;
 }
 
-#about-light h1.big, #skills-light h1.big,#projects-light h1.big,  #contact-light h1.big  {
+#about-light h1.big, #exp-light h1.big,#skills-light h1.big,#projects-light h1.big,  #contact-light h1.big  {
   color: rgba(67, 9, 9, 0.1);
 }
 

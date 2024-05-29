@@ -496,7 +496,7 @@ input:checked + .slider:before {
 }
 
 #about .about-content-box, #about-light .about-content-box{
-  font-size: x-large;
+  font-size: large;
   text-justify: auto;
   text-align: justify;
 }
@@ -685,7 +685,7 @@ input:checked + .slider:before {
 }
 
 .about-content-box p{
-  line-height: 1.8;
+  line-height: 1.4;
 }
 
 .image-name-container {
@@ -985,7 +985,8 @@ footer {
 
   .devName{
     font-size: 40px;
-    background: -webkit-linear-gradient(top left, #914dff, #ffde68);
+    background: -webkit-linear-gradient(top left, #724fff, #aaa5eb);
+    /* background: -webkit-linear-gradient(top left, #914dff, #ffde68); */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
@@ -1026,16 +1027,25 @@ footer {
     top: auto;
   }
 
+  #about .about-content-box, #about-light .about-content-box{
+    font-size:medium;
+  }
   .about-content-box,.about-content-box1{
-    max-width: 275px;
-    height: 430px;
+    max-width: 300px;
+    /* height: 700px; */
     padding-left: 30px;
     padding-right: 30px;
+    overflow: initial;
+  }
+
+  .about-content-box{
+    height: 700px;
   }
 
   .about-content-box p {
-    line-height: 1.7;
+    line-height: 1.4;
     font-size: 1rem;
+    
   }
 
   .expImg{

@@ -11,6 +11,8 @@
     "react-scripts": "5.0.1",
     "react-simple": "^1.2.3",
     "react-simple-typewriter": "^5.0.1",
+    "smtpjs": "^0.0.1",
+    "sweetalert2": "^11.11.0",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

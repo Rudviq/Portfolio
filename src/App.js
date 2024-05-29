@@ -2,11 +2,16 @@ import React from 'react';
 import {useTypewriter, Cursor} from 'react-simple-typewriter';
 import './App.css';
 import { useState, useRef, useEffect } from 'react';
+import Swal from 'sweetalert2';
 
 function App() {
   const [isMobileView, setIsMobileView] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(true);
   const projectCarouselRef = useRef(null);
+  // const [from, setFrom] = useState('');
+  // const [subject, setSubject] = useState('');
+  // const [body, setBody] = useState('');
+  // const [message, setMessage] = useState('');
   let startX = 0;
   let scrollLeft = 0;
 
@@ -102,7 +107,32 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    const bodyMessage = 'Full Name:'+ formData.firstName+' '+formData.lastName+'<br>' +'Email: '+formData.email+ '<br>'+ formData.message; 
+    console.log(bodyMessage);
     // Add your form submission logic here
+    window.Email.send({
+      Host: "smtp.elasticemail.com",
+      Username: "rudviqbhavsar@gmail.com",
+      Password: "ED012BAC04069E381FD299309B2F0E7A01D7",
+      To: "rudviqbhavsar@gmail.com",
+      From: "rudviqbhavsar@gmail.com",
+      Subject: "Message from your Portfolio",
+      Body: bodyMessage,
+    }).then(
+      message =>{ 
+        if(message === 'OK'){
+          Swal.fire({
+            title: "Good job!",
+            text: "You clicked the button!",
+            icon: "success"
+          });
+        }
+    }
+    ).catch(
+      error => alert(`Failed to send email: ${error}`)
+    );
+
     console.log(formData);
     // Clear the form after submission
     setFormData({
@@ -111,6 +141,7 @@ function App() {
       email: '',
       message: ''
     });
+
   };
 
   const toggleDarkMode = () => {
@@ -161,6 +192,11 @@ function App() {
     if (prevIndex >= 0) {
       setStartIndex(prevIndex);
     }
+  };
+
+  const highlightStyle = {
+    color: '#724fff',
+    fontWeight: 'bold',
   };
 
 
@@ -248,10 +284,34 @@ function App() {
     <section id={about}>
       <h1 class="big">About</h1>
       <h2>About Me</h2>
-      <div className="about-content-box">
-        <p>A graduate student and a passionate problem solver using technology. Enthusiast about Software development and Data analytics and willing to seek experience through innovation in related fields. Believes in teamwork and plans to work in an environment that allows expanding capability to learn new technologies.
-My goal is to bring innovation to problem solving methods and develop solutions that complement the approach to organization.</p>
-      </div>
+      {/* <div className="about-content-box">
+        <p>A highly motivated Computer Science graduate with over 2 years of experience in full-stack development, database management, and software engineering. Proficient in a wide range of technologies, including C, C++, Python, SQL, Java, JavaScript, React, TypeScript, and various frameworks and tools. Adept at leveraging cutting-edge solutions to drive operational efficiency and enhance user experiences.</p>
+        <p>
+            Dedicated to delivering high-quality projects within demanding timelines, with a proven track record of successful collaborations in Agile environments. Possess exceptional problem-solving abilities, attention to detail, and a strong work ethic. Continuously seeking opportunities to expand knowledge and stay updated with industry trends.
+        </p><p>
+            Committed to contributing innovative solutions that make a meaningful impact, whether developing cutting-edge applications, optimizing database systems, or implementing software solutions to drive business growth.</p>
+      </div> */}
+      <div class="about-content-box">
+      <p>
+        A highly motivated <span style={highlightStyle}>Computer Science graduate</span> with over{' '}
+        <span style={highlightStyle}>2 years of experience</span> in <span style={highlightStyle}>full-stack development</span>,{' '}
+        <span style={highlightStyle}>database management</span>, and <span style={highlightStyle}>software engineering</span>. Proficient in a wide range of technologies, including{' '}
+        <span style={highlightStyle}>C</span>, <span style={highlightStyle}>C++</span>, <span style={highlightStyle}>Python</span>,{' '}
+        <span style={highlightStyle}>SQL</span>, <span style={highlightStyle}>Java</span>, <span style={highlightStyle}>JavaScript</span>,{' '}
+        <span style={highlightStyle}>React</span>, <span style={highlightStyle}>TypeScript</span>, and various frameworks and tools. Adept at leveraging cutting-edge solutions to drive operational efficiency and enhance user experiences.
+      </p>
+      <p>
+        Dedicated to delivering <span style={highlightStyle}>high-quality projects</span> within demanding timelines, with a proven track record of successful collaborations in{' '}
+        <span style={highlightStyle}>Agile environments</span>. Possess exceptional <span style={highlightStyle}>problem-solving abilities</span>,{' '}
+        <span style={highlightStyle}>attention to detail</span>, and a <span style={highlightStyle}>strong work ethic</span>. Continuously seeking opportunities to expand knowledge and stay updated with industry trends.
+      </p>
+      <p>
+        Committed to contributing <span style={highlightStyle}>innovative solutions</span> that make a meaningful impact, whether developing{' '}
+        <span style={highlightStyle}>cutting-edge applications</span>, <span style={highlightStyle}>optimizing database systems</span>, or implementing{' '}
+        <span style={highlightStyle}>software solutions</span> to drive business growth.
+      </p>
+    </div>
+
     </section>
     <div className="or-spacer">
       <div className="mask"></div>
@@ -421,6 +481,8 @@ My goal is to bring innovation to problem solving methods and develop solutions 
                   name="firstName"
                   value={formData.firstName}
                   onChange={handleChange}
+
+                  autoComplete='off'
                   required
                 />
             {/* <div className="name-group" id="name-group">
@@ -449,6 +511,19 @@ My goal is to bring innovation to problem solving methods and develop solutions 
             </div> */}
           </div>
           <div className="form-group">
+            <label htmlFor="lastName">Last Name</label>
+            <input
+              type="text"
+              id="lastName"
+              name="lastName"
+              value={formData.lastName}
+              onChange={handleChange}
+              
+              autoComplete='off'
+              required
+            />
+          </div>
+          <div className="form-group">
             <label htmlFor="email">Email</label>
             <input
               type="email"
@@ -456,7 +531,9 @@ My goal is to bring innovation to problem solving methods and develop solutions 
               name="email"
               value={formData.email}
               onChange={handleChange}
-              required
+              // onChange={(e) => setFrom(e.target.value)}
+              autoComplete='off'
+              // required
             />
           </div>
           <div className="form-group">
@@ -466,11 +543,14 @@ My goal is to bring innovation to problem solving methods and develop solutions 
               name="message"
               value={formData.message}
               onChange={handleChange}
-              required
+              // onChange={(e) => setBody(e.target.value)}
+              autoComplete='off'
+              // required
             ></textarea>
           </div>
           <button id="cntct-sub" type="submit">Submit</button>
         </form>
+        
       </div>
     </section>
     <footer style={{paddingTop:isMobileView?'0px':'20px'}}>

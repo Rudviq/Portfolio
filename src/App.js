@@ -406,7 +406,7 @@ My goal is to bring innovation to problem solving methods and develop solutions 
                   <div>
                     <img src={skill.pic} alt="Pic" />
                     <h3>{skill.name}</h3>
-                    <p>{skill.proficiency}</p>
+                    {/* <p>{skill.proficiency}</p> */}
                   </div>
                 </article>
               ))}

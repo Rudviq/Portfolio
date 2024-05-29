@@ -108,7 +108,8 @@ function App() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const bodyMessage = 'Full Name:'+ formData.firstName+' '+formData.lastName+'<br>' +'Email: '+formData.email+ '<br>'+ formData.message; 
+    const bodyMessage = `Full Name: ${formData.firstName} ${formData.lastName}<br>Email: ${formData.email}<br>${formData.message}`;
+    // const bodyMessage = 'Full Name:'+ formData.firstName+' '+formData.lastName+'<br>' +'Email: '+formData.email+ '<br>'+ formData.message; 
     console.log(bodyMessage);
     // Add your form submission logic here
     window.Email.send({
@@ -124,7 +125,7 @@ function App() {
         if(message === 'OK'){
           Swal.fire({
             title: "Good job!",
-            text: "You clicked the button!",
+            text: "Message sent successfully!",
             icon: "success"
           });
         }

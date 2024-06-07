@@ -152,7 +152,7 @@ function App() {
   };    
 
   const openPdf = ()=>{
-    window.open('RudviqBhavsar___Resume.pdf', '_blank');
+    window.open('RudviqBhavsar_Resume.pdf', '_blank');
   }
 
   
